@@ -24,6 +24,7 @@ const SccContainer = (props) => {
     activeSection,
     className,
     pageTitle,
+    primaryId,
   } = props;
 
   const documentTitle = `${pageTitle ? `${pageTitle} | ` : ''}${appConfig.displayTitle} | NYPL`;
@@ -59,7 +60,7 @@ const SccContainer = (props) => {
             </div>
             <SubNav activeSection={activeSection} />
           </div>
-          <div className={`content-primary ${className || ''}`}>
+          <div className={`content-primary ${className || ''}`} id={primaryId}>
             {children}
           </div>
         </main>
@@ -74,10 +75,12 @@ SccContainer.propTypes = {
   activeSection: PropTypes.string,
   className: PropTypes.string,
   pageTitle: PropTypes.string,
+  primaryId: PropTypes.string,
 };
 
 SccContainer.defaultProps = {
   useLoadingLayer: true,
+  primaryId: 'SccContainer-content-primary',
 };
 
 SccContainer.contextTypes = {

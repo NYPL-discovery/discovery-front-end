@@ -35,6 +35,7 @@ const SubjectHeadingsIndexPage = (props) => {
       activeSection="shep"
       pageTitle="Subject Headings"
       className="subject-heading-page"
+      primaryId="subject-heading-content-primary"
     >
       <div
         className="subject-heading-page-header"
